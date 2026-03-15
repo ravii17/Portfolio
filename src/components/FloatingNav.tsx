@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Home, FolderOpen, Archive, FileText, Mail } from 'lucide-react';
+import { Home, FolderOpen, Archive, FileText, Mail, Github, Linkedin } from 'lucide-react';
 
 const navItems = [
   { path: '/', icon: Home, label: 'Home' },
@@ -84,6 +84,42 @@ const FloatingNav = () => {
           </motion.div>
           <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-card text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             Contact
+          </span>
+        </a>
+
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative group"
+        >
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="p-3 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-200"
+          >
+            <Github className="w-5 h-5" />
+          </motion.div>
+          <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-card text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            GitHub
+          </span>
+        </a>
+
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative group"
+        >
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="p-3 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-200"
+          >
+            <Linkedin className="w-5 h-5" />
+          </motion.div>
+          <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-card text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            LinkedIn
           </span>
         </a>
       </motion.div>
