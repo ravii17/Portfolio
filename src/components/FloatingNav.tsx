@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
 import { Home, FolderOpen, Archive, FileText, Mail, Github, Linkedin } from 'lucide-react';
+=======
+import { Home, FolderOpen, Archive, FileText, Mail } from 'lucide-react';
+>>>>>>> 209f3709b91f1d7994970e0bd365b0d572aae2c4
 
 const navItems = [
   { path: '/', icon: Home, label: 'Home' },
@@ -86,6 +90,7 @@ const FloatingNav = () => {
             Contact
           </span>
         </a>
+<<<<<<< HEAD
 
         <a
           href="https://github.com"
@@ -122,6 +127,8 @@ const FloatingNav = () => {
             LinkedIn
           </span>
         </a>
+=======
+>>>>>>> 209f3709b91f1d7994970e0bd365b0d572aae2c4
       </motion.div>
     </motion.nav>
   );
