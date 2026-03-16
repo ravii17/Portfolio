@@ -48,7 +48,7 @@ const BentoCard = ({
           transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
           className="glass h-full rounded-2xl overflow-hidden relative"
         >
-          {/* Background Image */}
+          
           {image && (
             <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
               <img 
@@ -61,7 +61,7 @@ const BentoCard = ({
           )}
           
           <div className="relative h-full p-6 md:p-8 flex flex-col justify-end min-h-[280px]">
-            {/* Tags */}
+            
             <div className="flex flex-wrap gap-2 mb-4">
               {tags.map((tag) => (
                 <span 
@@ -73,24 +73,20 @@ const BentoCard = ({
               ))}
             </div>
 
-            {/* Title */}
             <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
               {title}
             </h3>
 
-            {/* Description */}
             <p className="text-muted-foreground text-sm md:text-base mb-4 line-clamp-2">
               {description}
             </p>
 
-            {/* View Project Link */}
             <div className="flex items-center text-sm font-medium text-primary arrow-hover">
               <span>View Project</span>
               <ArrowUpRight className="w-4 h-4 ml-1 arrow-icon" />
             </div>
           </div>
 
-          {/* Hover glow effect */}
           <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 via-transparent to-primary/5" />
           </div>

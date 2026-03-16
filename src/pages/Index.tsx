@@ -17,11 +17,11 @@ const Index = () => {
   return (
     <PageTransition>
       <div className="min-h-screen">
-        {/* Hero Section */}
+        
         <section className="min-h-screen flex flex-col justify-center px-6 lg:px-16 pt-12 pb-24">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left - Text Content */}
+              
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -70,20 +70,17 @@ const Index = () => {
                 </div>
               </motion.div>
 
-              {/* Right - Visual Element */}
               <div className="flex justify-center lg:justify-end">
                 <HeroCard />
               </div>
             </div>
           </div>
 
-          {/* Tech Marquee */}
           <div className="mt-auto pt-16">
             <TechMarquee />
           </div>
         </section>
 
-        {/* Selected Works Section */}
         <section id="work" className="py-24 px-6 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <SectionHeader 
@@ -91,7 +88,6 @@ const Index = () => {
               subtitle="A curated collection of projects showcasing expertise in high-performance computing, distributed systems, and full-stack development."
             />
 
-            {/* Bento Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredProjects.map((project, index) => (
                 <BentoCard
@@ -109,7 +105,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* About Section */}
         <section className="py-24 px-6 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -175,7 +170,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Footer spacing for floating nav */}
         <div className="h-32" />
       </div>
     </PageTransition>

@@ -38,12 +38,12 @@ const ProjectDetail = () => {
   return (
     <PageTransition>
       <div className="min-h-screen">
-        {/* Hero Section with Parallax */}
+        
         <section 
           ref={heroRef}
           className="relative min-h-[70vh] flex items-end pb-16 px-6 lg:px-16 overflow-hidden"
         >
-          {/* Parallax Background */}
+          
           <motion.div 
             style={{ y }}
             className="absolute inset-0 z-0"
@@ -61,12 +61,11 @@ const ProjectDetail = () => {
             />
           </motion.div>
 
-          {/* Content */}
           <motion.div 
             style={{ opacity }}
             className="relative z-10 max-w-5xl mx-auto w-full"
           >
-            {/* Back Link */}
+            
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
@@ -75,7 +74,6 @@ const ProjectDetail = () => {
               Back to projects
             </Link>
 
-            {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-6">
               {project.tags.map((tag) => (
                 <span 
@@ -87,7 +85,6 @@ const ProjectDetail = () => {
               ))}
             </div>
 
-            {/* Title */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -97,7 +94,6 @@ const ProjectDetail = () => {
               {project.title}
             </motion.h1>
 
-            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -109,11 +105,10 @@ const ProjectDetail = () => {
           </motion.div>
         </section>
 
-        {/* Content Section */}
         <section className="py-16 px-6 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-12">
-              {/* Main Content */}
+              
               <div className="lg:col-span-2">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -126,7 +121,6 @@ const ProjectDetail = () => {
                     {project.longDescription || project.description}
                   </p>
 
-                  {/* Placeholder for project images/gallery */}
                   <div className="glass rounded-2xl aspect-video flex items-center justify-center mb-8">
                     <p className="text-muted-foreground">Project Screenshot / Demo</p>
                   </div>
@@ -153,7 +147,6 @@ const ProjectDetail = () => {
                 </motion.div>
               </div>
 
-              {/* Sidebar */}
               <div className="lg:col-span-1">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -162,13 +155,12 @@ const ProjectDetail = () => {
                   transition={{ delay: 0.2, duration: 0.6 }}
                   className="glass rounded-2xl p-6 sticky top-8"
                 >
-                  {/* Year */}
+                  
                   <div className="mb-6">
                     <p className="text-sm text-muted-foreground mb-1">Year</p>
                     <p className="font-medium">{project.year}</p>
                   </div>
 
-                  {/* Tech Stack */}
                   {project.techStack && (
                     <div className="mb-6">
                       <p className="text-sm text-muted-foreground mb-2">Tech Stack</p>
@@ -185,7 +177,6 @@ const ProjectDetail = () => {
                     </div>
                   )}
 
-                  {/* Links */}
                   <div className="space-y-3 pt-6 border-t border-border">
                     <MagneticButton
                       as="a"
@@ -211,7 +202,6 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        {/* Next Project */}
         <section className="py-16 px-6 lg:px-16 border-t border-border">
           <div className="max-w-5xl mx-auto">
             <motion.div
@@ -232,7 +222,6 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        {/* Footer spacing */}
         <div className="h-32" />
       </div>
     </PageTransition>

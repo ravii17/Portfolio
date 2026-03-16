@@ -4,7 +4,6 @@ import PageTransition from '@/components/PageTransition';
 import SectionHeader from '@/components/SectionHeader';
 import { ArrowUpRight, Calendar } from 'lucide-react';
 
-// Placeholder blog posts - will be replaced with CMS data
 const posts = [
   {
     id: 'optimizing-cuda-kernels',
@@ -50,7 +49,6 @@ const Notes = () => {
             subtitle="Thoughts on software engineering, high-performance computing, and the craft of building great software."
           />
 
-          {/* Posts Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {posts.map((post, index) => (
               <motion.article
@@ -69,7 +67,7 @@ const Notes = () => {
                     transition={{ duration: 0.2 }}
                     className="glass h-full rounded-2xl p-6 flex flex-col"
                   >
-                    {/* Meta */}
+                    
                     <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />
@@ -83,17 +81,14 @@ const Notes = () => {
                       <span>{post.readTime}</span>
                     </div>
 
-                    {/* Title */}
                     <h2 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
                       {post.title}
                     </h2>
 
-                    {/* Excerpt */}
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow">
                       {post.excerpt}
                     </p>
 
-                    {/* Tags & Read Link */}
                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
                       <div className="flex flex-wrap gap-2">
                         {post.tags.slice(0, 2).map((tag) => (
@@ -117,7 +112,6 @@ const Notes = () => {
             ))}
           </div>
 
-          {/* CMS Notice */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -130,7 +124,6 @@ const Notes = () => {
           </motion.div>
         </div>
 
-        {/* Footer spacing */}
         <div className="h-32" />
       </div>
     </PageTransition>

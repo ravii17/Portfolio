@@ -15,9 +15,8 @@ const Archive = () => {
             subtitle="A collection of past projects, experiments, and side quests in software engineering."
           />
 
-          {/* Project List */}
           <div className="space-y-1">
-            {/* Header Row */}
+            
             <div className="hidden md:grid grid-cols-12 gap-4 py-3 text-sm text-muted-foreground border-b border-border">
               <div className="col-span-1">Year</div>
               <div className="col-span-5">Project</div>
@@ -25,7 +24,6 @@ const Archive = () => {
               <div className="col-span-1"></div>
             </div>
 
-            {/* Project Rows */}
             {archiveProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -38,12 +36,11 @@ const Archive = () => {
                   to={`/project/${project.id}`}
                   className="group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 py-4 md:py-5 border-b border-border/50 hover:bg-secondary/30 -mx-4 px-4 transition-colors"
                 >
-                  {/* Year */}
+                  
                   <div className="md:col-span-1 text-muted-foreground text-sm">
                     {project.year}
                   </div>
 
-                  {/* Title & Description */}
                   <div className="md:col-span-5">
                     <h3 className="font-medium group-hover:text-primary transition-colors">
                       {project.title}
@@ -53,7 +50,6 @@ const Archive = () => {
                     </p>
                   </div>
 
-                  {/* Tags */}
                   <div className="md:col-span-5 flex flex-wrap gap-2 mt-2 md:mt-0">
                     {project.tags.map((tag) => (
                       <span 
@@ -65,7 +61,6 @@ const Archive = () => {
                     ))}
                   </div>
 
-                  {/* Arrow */}
                   <div className="hidden md:flex md:col-span-1 items-center justify-end">
                     <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
                   </div>
@@ -75,7 +70,6 @@ const Archive = () => {
           </div>
         </div>
 
-        {/* Footer spacing */}
         <div className="h-32" />
       </div>
     </PageTransition>

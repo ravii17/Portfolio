@@ -60,8 +60,7 @@ const FloatingNav = () => {
               >
                 <item.icon className="w-5 h-5" />
               </motion.div>
-              
-              {/* Tooltip */}
+
               <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-card text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                 {item.label}
               </span>

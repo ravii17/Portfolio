@@ -16,7 +16,6 @@ const Work = () => {
             subtitle="Featured projects showcasing expertise in high-performance computing, distributed systems, and modern web development."
           />
 
-          {/* Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProjects.map((project, index) => (
               <BentoCard
@@ -33,7 +32,6 @@ const Work = () => {
           </div>
         </div>
 
-        {/* Footer spacing */}
         <div className="h-32" />
       </div>
     </PageTransition>

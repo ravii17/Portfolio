@@ -31,7 +31,7 @@ const App = () => (
             <Route path="/notes" element={<Notes />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
             <Route path="/notes/:id" element={<Notes />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
