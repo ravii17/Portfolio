@@ -15,7 +15,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-<<<<<<< HEAD
     id: 'Trust-Tour',
     title: 'Trust Tour',
     description: 'Trust Tour is a comprehensive travel platform designed to connect travelers with local authorities. It bridges the gap between tourists seeking genuine help in emergency and local authorities, ensuring safe and reliable journeys.',
@@ -26,24 +25,15 @@ export const projects: Project[] = [
     liveUrl: 'https://trust-toura.pages.dev/',
     githubUrl: 'https://github.com/Ravii17/Trust-Tour',
     year: '2026',
-=======
-    id: 'hpc-simulation-engine',
-    title: 'HPC Simulation Engine',
-    description: 'High-performance parallel computing framework for molecular dynamics simulations with GPU acceleration.',
-    longDescription: 'A cutting-edge simulation engine designed for large-scale molecular dynamics computations. Leveraging CUDA and MPI for distributed GPU clusters, this project achieves near-linear scaling across thousands of cores. Features include adaptive load balancing, real-time visualization, and support for various force fields.',
-    tags: ['HPC', 'CUDA', 'MPI', 'C++'],
-    techStack: ['C++17', 'CUDA', 'MPI', 'OpenMP', 'Python', 'VTK'],
-    year: '2024',
->>>>>>> 209f3709b91f1d7994970e0bd365b0d572aae2c4
     featured: true,
   },
   {
     id: 'neural-compute-platform',
-    title: 'Neural Compute Platform',
-    description: 'Distributed machine learning infrastructure for training large-scale neural networks across GPU clusters.',
-    longDescription: 'An enterprise-grade platform for distributed deep learning that simplifies training across multiple nodes. Built with fault tolerance, automatic checkpointing, and dynamic resource allocation. Supports PyTorch and TensorFlow with custom operators for specialized hardware.',
-    tags: ['ML', 'Distributed Systems', 'Python'],
-    techStack: ['Python', 'PyTorch', 'Ray', 'Kubernetes', 'Redis', 'PostgreSQL'],
+    title: 'Smart Parking System Using IoT',
+    description: 'Smart Parking System Using IoT is a comprehensive IoT-based system that helps drivers find parking spots easily and efficiently.',
+    longDescription: 'Smart Parking System Using IoT is a comprehensive IoT-based system that helps drivers find parking spots easily and efficiently. It uses sensors to detect available parking spots and provides real-time information to drivers through a mobile app. The system also includes features like automatic payment and navigation to the nearest available parking spot.',
+    tags: ['IoT', 'Web Development', 'Full Stack', 'React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Firebase'],
+    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Firebase'],
     year: '2024',
     featured: true,
   },
