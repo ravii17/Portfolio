@@ -57,6 +57,16 @@ export const projects: Project[] = [
     year: '2026',
     featured: true,
   },
+  {
+    id: 'Health-Care Plus',
+    title: 'Health-Care Plus',
+    description: 'Health-Care Plus is an platform to store and manage health records of patients.',
+    longDescription: 'Health-Care Plus is a comprehensive platform for storing and managing health records of patients. It provides a seamless experience for users to find cafes that match their preferences and preferences.',
+    tags: ['Android Development', 'Full Stack', 'React', 'Node.js', 'Express', 'Tailwind CSS', 'Firebase'],
+    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Firebase'],
+    year: '2026',
+    featured: true,
+  },
 ];
 
 export const archiveProjects: Project[] = [
