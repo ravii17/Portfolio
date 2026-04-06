@@ -149,6 +149,7 @@ const Index = () => {
                     { category: 'Android Dev', items: ['Java', 'Kotlin'] },
                     { category: 'Frontend', items: ['React', 'Next.js', 'Tailwind'] },
                     { category: 'Backend', items: ['Node.js', 'PostgreSQL', 'Redis'] },
+                    { category: 'Electronics', items: ['MATLAB', 'Tinkercad'] },
                   ].map((group) => (
                     <div key={group.category}>
                       <p className="text-sm text-muted-foreground mb-2">{group.category}</p>
