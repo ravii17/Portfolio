@@ -146,7 +146,6 @@ const Index = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     { category: 'Languages', items: ['C++', 'Python', 'TypeScript', 'Rust'] },
-                    { category: 'HPC', items: ['CUDA', 'MPI', 'OpenMP', 'SYCL'] },
                     { category: 'Frontend', items: ['React', 'Next.js', 'Tailwind'] },
                     { category: 'Backend', items: ['Node.js', 'PostgreSQL', 'Redis'] },
                   ].map((group) => (
