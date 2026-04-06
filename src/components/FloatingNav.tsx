@@ -70,7 +70,7 @@ const FloatingNav = () => {
         <div className="w-px h-6 bg-border mx-2" />
 
         <a
-          href="mailto:ravi@example.com"
+          href="mailto:ravi170@icloud.com"
           className="relative group"
         >
           <motion.div
