@@ -40,9 +40,9 @@ const FloatingNav = () => {
         className="glass-strong rounded-full py-3 px-6 flex items-center gap-1"
       >
         {navItems.map((item) => {
-          const isActive = location.pathname === item.path || 
+          const isActive = location.pathname === item.path ||
             (item.path === '/work' && location.pathname.startsWith('/project'));
-          
+
           return (
             <Link
               key={item.path}
@@ -52,11 +52,10 @@ const FloatingNav = () => {
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className={`p-3 rounded-full transition-colors duration-200 ${
-                  isActive 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
-                }`}
+                className={`p-3 rounded-full transition-colors duration-200 ${isActive
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
+                  }`}
               >
                 <item.icon className="w-5 h-5" />
               </motion.div>
@@ -86,7 +85,7 @@ const FloatingNav = () => {
           </span>
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/ravii17"
           target="_blank"
           rel="noopener noreferrer"
           className="relative group"
