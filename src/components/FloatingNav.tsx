@@ -103,7 +103,7 @@ const FloatingNav = () => {
         </a>
 
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/ravikumar17"
           target="_blank"
           rel="noopener noreferrer"
           className="relative group"
