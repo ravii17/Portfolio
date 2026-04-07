@@ -6,11 +6,11 @@ import { ArrowUpRight, Calendar } from 'lucide-react';
 
 const posts = [
   {
-    id: 'optimizing-cuda-kernels',
-    title: 'Optimizing CUDA Kernels for Maximum Throughput',
-    excerpt: 'Deep dive into memory coalescing, shared memory usage, and warp-level primitives for high-performance GPU computing.',
-    date: '2024-01-15',
-    tags: ['HPC', 'CUDA', 'Performance'],
+    id: 'Building a platform for Foreign Travellers',
+    title: 'Building a platform for Foreign Travellers',
+    excerpt: 'I have always wanted to travel to a place where I can just be myself and not worry about anything. This is a platform that I built to help people like me do just that.',
+    date: '2026-04-08',
+    tags: ['React', 'Node.js', 'MongoDB', 'Cryptography & Blockchain'],
     readTime: '8 min read',
   },
   {
@@ -44,8 +44,8 @@ const Notes = () => {
     <PageTransition>
       <div className="min-h-screen py-24 px-6 lg:px-16">
         <div className="max-w-5xl mx-auto">
-          <SectionHeader 
-            title="Notes" 
+          <SectionHeader
+            title="Notes"
             subtitle="Thoughts on software engineering, high-performance computing, and the craft of building great software."
           />
 
@@ -67,7 +67,7 @@ const Notes = () => {
                     transition={{ duration: 0.2 }}
                     className="glass h-full rounded-2xl p-6 flex flex-col"
                   >
-                    
+
                     <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />
@@ -92,7 +92,7 @@ const Notes = () => {
                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
                       <div className="flex flex-wrap gap-2">
                         {post.tags.slice(0, 2).map((tag) => (
-                          <span 
+                          <span
                             key={tag}
                             className="text-xs uppercase tracking-wider text-muted-foreground"
                           >
@@ -100,7 +100,7 @@ const Notes = () => {
                           </span>
                         ))}
                       </div>
-                      
+
                       <span className="flex items-center gap-1 text-sm font-medium text-primary arrow-hover">
                         Read
                         <ArrowUpRight className="w-4 h-4 arrow-icon" />
@@ -119,7 +119,7 @@ const Notes = () => {
             className="mt-16 text-center"
           >
             <p className="text-muted-foreground text-sm">
-              Blog content will be CMS-powered for easy editing.
+              About what i think of my Projcts so far...
             </p>
           </motion.div>
         </div>
