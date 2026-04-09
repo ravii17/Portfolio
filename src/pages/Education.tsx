@@ -7,7 +7,7 @@ const educationData = [
     institution: "KIIT Deemed to be University",
     degree: "Bachelor of Electronics & Computer Science Engineering",
     period: "2023 - 2027",
-    description: "Relevant coursework: Data Structures, Algorithms, Distributed Systems, High-Performance Computing, Machine Learning.",
+    description: "Relevant coursework: Data Structures, Algorithms, Computer System & Architecture, High-Performance Computing.",
   },
   {
     institution: "High School",
