@@ -140,7 +140,7 @@ const ProjectDetail = () => {
                     </div>
                   )}
 
-                  {project.features && project.features.length > 0 ? (
+                  {project.features && project.features.length > 0 && (
                     <div className="mb-10">
                       <h2 className="text-2xl font-semibold mb-6">Key Features</h2>
                       <ul className="space-y-3 text-muted-foreground">
@@ -150,20 +150,6 @@ const ProjectDetail = () => {
                             <span>{feature}</span>
                           </li>
                         ))}
-                      </ul>
-                    </div>
-                  ) : (
-                    <div className="mb-10">
-                      <h2 className="text-2xl font-semibold mb-6">Key Highlights</h2>
-                      <ul className="space-y-3 text-muted-foreground">
-                        <li className="flex items-start gap-3">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                          <span>Scalable architecture designed for production workloads</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                          <span>High-performance implementation with optimized algorithms</span>
-                        </li>
                       </ul>
                     </div>
                   )}
