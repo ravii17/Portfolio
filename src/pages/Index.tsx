@@ -17,11 +17,11 @@ const Index = () => {
   return (
     <PageTransition>
       <div className="min-h-screen">
-        
+
         <section className="min-h-screen flex flex-col justify-center px-6 lg:px-16 pt-12 pb-24">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              
+
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -35,19 +35,18 @@ const Index = () => {
                 >
                   Welcome to my portfolio
                 </motion.p>
-                
+
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
                   Ravi Kumar
                 </h1>
-                
+
                 <div className="text-2xl md:text-3xl lg:text-4xl font-medium mb-8">
                   <TypewriterText words={roles} />
                 </div>
-                
+
                 <p className="text-muted-foreground text-lg max-w-lg mb-10 leading-relaxed">
-                  Building high-performance systems and elegant web applications. 
-                  Passionate about pushing computational boundaries and creating 
-                  exceptional user experiences.
+                  Currently building intelligent software and practical tech solutions. Working on an AI agents and automation-driven projects,
+                  including an AI trading system that can trade on Hyper-Liquid with my own strategy.
                 </p>
 
                 <div className="flex gap-4">
@@ -59,7 +58,7 @@ const Index = () => {
                     View My Work
                     <ArrowDown className="w-4 h-4" />
                   </MagneticButton>
-                  
+
                   <MagneticButton
                     as="a"
                     href="mailto:ravi@example.com"
@@ -83,8 +82,8 @@ const Index = () => {
 
         <section id="work" className="py-24 px-6 lg:px-16">
           <div className="max-w-7xl mx-auto">
-            <SectionHeader 
-              title="Selected Works" 
+            <SectionHeader
+              title="Selected Works"
               subtitle="A curated collection of projects showcasing expertise in high-performance computing, distributed systems, and full-stack development."
             />
 
@@ -117,19 +116,19 @@ const Index = () => {
                 <SectionHeader title="About Me" />
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    I'm a software engineer specializing in high-performance computing 
-                    and scalable web applications. With expertise spanning from low-level 
-                    systems programming to modern frontend frameworks, I bridge the gap 
+                    I'm a software engineer specializing in high-performance computing
+                    and scalable web applications. With expertise spanning from low-level
+                    systems programming to modern frontend frameworks, I bridge the gap
                     between computational efficiency and user experience.
                   </p>
                   <p>
-                    My work focuses on building systems that can handle massive scale—whether 
-                    that's simulating molecular dynamics across GPU clusters or architecting 
+                    My work focuses on building systems that can handle massive scale—whether
+                    that's simulating molecular dynamics across GPU clusters or architecting
                     real-time data pipelines for millions of events per second.
                   </p>
                   <p>
-                    When I'm not optimizing algorithms or designing APIs, you'll find me 
-                    exploring new programming languages, contributing to open source, 
+                    When I'm not optimizing algorithms or designing APIs, you'll find me
+                    exploring new programming languages, contributing to open source,
                     or writing about technical topics on my blog.
                   </p>
                 </div>
@@ -155,7 +154,7 @@ const Index = () => {
                       <p className="text-sm text-muted-foreground mb-2">{group.category}</p>
                       <div className="flex flex-wrap gap-2">
                         {group.items.map((item) => (
-                          <span 
+                          <span
                             key={item}
                             className="text-sm bg-secondary px-2 py-1 rounded"
                           >
