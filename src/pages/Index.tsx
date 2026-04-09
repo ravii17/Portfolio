@@ -7,7 +7,7 @@ import SectionHeader from '@/components/SectionHeader';
 import BentoCard from '@/components/BentoCard';
 import MagneticButton from '@/components/MagneticButton';
 import { projects } from '@/data/projects';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react';
 
 const roles = ['HPC Engineer', 'Full Stack Developer', 'Software Engineer'];
 
@@ -168,6 +168,26 @@ const Index = () => {
               </motion.div>
             </div>
           </div>
+        </section>
+
+        <section className="pb-24 px-6 lg:px-16 flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <MagneticButton
+              as="a"
+              href="https://drive.google.com/file/d/1DRtGuIyJnwOldQtqJGsQf4VN2ObvEptl/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full text-lg font-medium hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+            >
+              <Download className="w-5 h-5" />
+              View My Resume
+            </MagneticButton>
+          </motion.div>
         </section>
 
         <div className="h-32" />
