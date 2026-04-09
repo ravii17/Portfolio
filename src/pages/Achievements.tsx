@@ -5,21 +5,27 @@ import SectionHeader from '@/components/SectionHeader';
 const achievementsData = [
   {
     title: "Model United Nations Delegate",
-    organization: "Model United Nations",
+    organization: "KIIT Model United Nations",
     date: "November 2025",
     description: "Represented Dominican Republic in the Model United Nations conference and presented a speech on global issues.",
   },
   {
-    title: "Open Source Contributor",
-    organization: "GitHub",
-    date: "2023 - Present",
-    description: "Actively contributing to multiple high-impact open source repositories and acknowledged by maintainers.",
+    title: "SIH Participant",
+    organization: "Smart India Hackathon",
+    date: "2025",
+    description: "Participated in Smart India Hackathon and developed a solution to solve real-world problems.",
   },
   {
-    title: "Open Source Contributor",
-    organization: "GitHub",
-    date: "2023 - Present",
-    description: "Actively contributing to multiple high-impact open source repositories and acknowledged by maintainers.",
+    title: "Kreative 3.0",
+    organization: "Kreative 3.0",
+    date: "2025",
+    description: "Participated in Kreative 3.0 & Show cased my low Cost ECG machine that we developed for our college minor project.",
+  },
+  {
+    title: "Evaluation Round in Prop firms",
+    organization: "Prop Firms",
+    date: "2026",
+    description: "Successfully clearedd the Evaluation Round in Funding Pips Prop Firm.",
   }
 ];
 
