@@ -10,10 +10,10 @@ const educationData = [
     description: "Relevant coursework: Data Structures, Algorithms, Computer System & Architecture, High-Performance Computing.",
   },
   {
-    institution: "High School",
-    degree: "High School Diploma",
-    period: "2017 - 2019",
-    description: "Focused on Mathematics and Computer Science.",
+    institution: "Kendriya Vidyalaya 1 S.T.C Jabalpur",
+    degree: "10th & Intermediate",
+    period: "2020 - 2022",
+    description: "Focused on Mathematics, Physics, Chemistry, English, Computer Science.",
   }
 ];
 
