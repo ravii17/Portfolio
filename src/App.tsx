@@ -11,6 +11,7 @@ import Work from "./pages/Work";
 import Archive from "./pages/Archive";
 import Notes from "./pages/Notes";
 import Education from "./pages/Education";
+import Achievements from "./pages/Achievements";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
 
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/work" element={<Work />} />
             <Route path="/education" element={<Education />} />
+            <Route path="/achievements" element={<Achievements />} />
             <Route path="/archive" element={<Archive />} />
             <Route path="/notes" element={<Notes />} />
             <Route path="/project/:id" element={<ProjectDetail />} />

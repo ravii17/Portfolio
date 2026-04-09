@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Home, FolderOpen, Archive, FileText, GraduationCap, Mail, Github, Linkedin } from 'lucide-react';
+import { Home, FolderOpen, Archive, FileText, GraduationCap, Trophy, Mail, Github, Linkedin } from 'lucide-react';
 
 const navItems = [
   { path: '/', icon: Home, label: 'Home' },
   { path: '/work', icon: FolderOpen, label: 'Work' },
   { path: '/education', icon: GraduationCap, label: 'Education' },
+  { path: '/achievements', icon: Trophy, label: 'Achievements' },
   { path: '/archive', icon: Archive, label: 'Archive' },
   { path: '/notes', icon: FileText, label: 'Notes' },
 ];
