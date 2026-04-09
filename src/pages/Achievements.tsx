@@ -4,10 +4,16 @@ import SectionHeader from '@/components/SectionHeader';
 
 const achievementsData = [
   {
-    title: "Hackathon Winner",
-    organization: "Global Tech Summit 2024",
-    date: "2024",
-    description: "Secured 1st place for building an innovative AI-driven solution to solve real-world accessibility challenges.",
+    title: "Model United Nations Delegate",
+    organization: "Model United Nations",
+    date: "November 2025",
+    description: "Represented Dominican Republic in the Model United Nations conference and presented a speech on global issues.",
+  },
+  {
+    title: "Open Source Contributor",
+    organization: "GitHub",
+    date: "2023 - Present",
+    description: "Actively contributing to multiple high-impact open source repositories and acknowledged by maintainers.",
   },
   {
     title: "Open Source Contributor",
