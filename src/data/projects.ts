@@ -73,9 +73,9 @@ export const projects: Project[] = [
   {
     id: 'Promotr',
     title: 'Promotr',
-    description: 'Promotr is an platform that helps to connect the organizers with the brands and help them to collaborate for promotional activities thet have the crew section as well as organizer section.',
+    description: 'Building an Android-based platform that connects event organizers, workforce, and clients to enable seamless event planning, hiring, and management in a unified ecosystem.',
     longDescription: 'Promotr is an event management platform designed to connect event organizers, workforce (crew), and clients within a single ecosystem. The platform allows crew members to register and offer their services as event staff, while organizers can onboard, manage events, and build credibility through a rating system. Additionally, users who wish to organize events can search for suitable organizers based on location and requirements, making the process efficient and transparent. The application also enables organizers to hire crew members directly within the platform, creating a complete end-to-end event management solution. As an Android Development Intern, I am responsible for developing and optimizing the mobile application, implementing user authentication and role-based navigation, designing responsive UI components, integrating REST APIs for real-time functionality, and improving overall app performance and stability using technologies such as Kotlin/Java, Android SDK, and Firebase.',
-    tags: ['Android Development', 'Full Stack', 'React', 'Node.js', 'Express', 'Tailwind CSS', 'Firebase'],
+    tags: ['Intership', 'Android Development', 'Kotlin', 'Firebase'],
     techStack: ['Kotlin', 'Android SDK', 'Firebase'],
     githubUrl: 'https://github.com/Ravii17/Promotr',
     year: '2026',
