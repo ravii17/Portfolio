@@ -7,6 +7,7 @@ export interface Project {
   image?: string;
   gallery?: string[];
   techStack?: string[];
+  features?: string[];
   liveUrl?: string;
   githubUrl?: string;
   year: string;
@@ -24,6 +25,16 @@ export const projects: Project[] = [
     image: 'C:\Users\ravik\Pictures\Screenshots',
     liveUrl: 'https://trust-toura.pages.dev/',
     githubUrl: 'https://github.com/Ravii17/Trust-Tour',
+    year: '2026',
+    featured: true,
+  },
+  {
+    id: 'AI Trading Agent',
+    title: 'AI Trading Agent',
+    description: 'AI Trading Agent Developed to trade autonomously on via linked broker in my case its running over Hyper-Liquid with your Strategies.',
+    longDescription: 'AI Trading Agent Developed to trade autonomously on via linked broker in my case its running over Hyper-Liquid with your back tested Strategies.',
+    tags: ['Web Development', 'AI-Agent', 'Langchain', 'Python', 'Hyper-Liquid'],
+    techStack: ['Python', 'Langchain', 'Hyper-Liquid', 'Tensor-Flow'],
     year: '2026',
     featured: true,
   },

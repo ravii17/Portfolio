@@ -9,7 +9,7 @@ import { useRef } from 'react';
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const heroRef = useRef<HTMLDivElement>(null);
-  
+
   const project = [...projects, ...archiveProjects].find(p => p.id === id);
 
   const { scrollYProgress } = useScroll({
@@ -38,18 +38,18 @@ const ProjectDetail = () => {
   return (
     <PageTransition>
       <div className="min-h-screen">
-        
-        <section 
+
+        <section
           ref={heroRef}
           className="relative min-h-[70vh] flex items-end pb-16 px-6 lg:px-16 overflow-hidden"
         >
-          
-          <motion.div 
+
+          <motion.div
             style={{ y }}
             className="absolute inset-0 z-0"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
-            <div 
+            <div
               className="absolute inset-0 opacity-5"
               style={{
                 backgroundImage: `
@@ -61,11 +61,11 @@ const ProjectDetail = () => {
             />
           </motion.div>
 
-          <motion.div 
+          <motion.div
             style={{ opacity }}
             className="relative z-10 max-w-5xl mx-auto w-full"
           >
-            
+
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
@@ -76,7 +76,7 @@ const ProjectDetail = () => {
 
             <div className="flex flex-wrap gap-2 mb-6">
               {project.tags.map((tag) => (
-                <span 
+                <span
                   key={tag}
                   className="text-sm uppercase tracking-wider text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full"
                 >
@@ -108,7 +108,7 @@ const ProjectDetail = () => {
         <section className="py-16 px-6 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-12">
-              
+
               <div className="lg:col-span-2">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -121,29 +121,52 @@ const ProjectDetail = () => {
                     {project.longDescription || project.description}
                   </p>
 
-                  <div className="glass rounded-2xl aspect-video flex items-center justify-center mb-8">
-                    <p className="text-muted-foreground">Project Screenshot / Demo</p>
-                  </div>
+                  {project.image ? (
+                    <div className="glass rounded-2xl aspect-video flex items-center justify-center mb-8 overflow-hidden group relative">
+                      <img
+                        src={project.image}
+                        alt={`${project.title} screenshot`}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  ) : (
+                    <div className="glass rounded-2xl aspect-video flex items-center justify-center mb-8 bg-secondary/10">
+                      <div className="text-center">
+                        <div className="w-16 h-16 rounded-full bg-secondary/30 flex items-center justify-center mx-auto mb-3">
+                          <span className="text-2xl font-semibold opacity-50">{project.title.charAt(0)}</span>
+                        </div>
+                        <p className="text-muted-foreground">Project Display Image</p>
+                      </div>
+                    </div>
+                  )}
 
-                  <h2 className="text-2xl font-semibold mb-6">Key Features</h2>
-                  <ul className="space-y-3 text-muted-foreground">
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      High-performance implementation with optimized algorithms
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      Scalable architecture designed for production workloads
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      Comprehensive testing and documentation
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      Clean, maintainable codebase following best practices
-                    </li>
-                  </ul>
+                  {project.features && project.features.length > 0 ? (
+                    <div className="mb-10">
+                      <h2 className="text-2xl font-semibold mb-6">Key Features</h2>
+                      <ul className="space-y-3 text-muted-foreground">
+                        {project.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <div className="mb-10">
+                      <h2 className="text-2xl font-semibold mb-6">Key Highlights</h2>
+                      <ul className="space-y-3 text-muted-foreground">
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                          <span>Scalable architecture designed for production workloads</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                          <span>High-performance implementation with optimized algorithms</span>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </motion.div>
               </div>
 
@@ -155,7 +178,7 @@ const ProjectDetail = () => {
                   transition={{ delay: 0.2, duration: 0.6 }}
                   className="glass rounded-2xl p-6 sticky top-8"
                 >
-                  
+
                   <div className="mb-6">
                     <p className="text-sm text-muted-foreground mb-1">Year</p>
                     <p className="font-medium">{project.year}</p>
@@ -166,7 +189,7 @@ const ProjectDetail = () => {
                       <p className="text-sm text-muted-foreground mb-2">Tech Stack</p>
                       <div className="flex flex-wrap gap-2">
                         {project.techStack.map((tech) => (
-                          <span 
+                          <span
                             key={tech}
                             className="text-sm bg-secondary px-2 py-1 rounded"
                           >
@@ -186,7 +209,7 @@ const ProjectDetail = () => {
                       <ExternalLink className="w-4 h-4" />
                       View Live
                     </MagneticButton>
-                    
+
                     <MagneticButton
                       as="a"
                       href={project.githubUrl || '#'}
