@@ -16,6 +16,25 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'agentic-ai-course-assistant',
+    title: 'Agentic AI Course Assistant',
+    description: 'Built an intelligent course assistance system using Agentic AI that helps students with academic queries, syllabus guidance, study planning, concept explanations, and personalized learning support.',
+    longDescription: 'An intelligent course assistance system powered by Agentic AI. It is designed to help students with academic queries, syllabus guidance, study planning, concept explanations, and personalized learning support. The system uses LangGraph to manage agentic workflows, integrating ChromaDB for context retrieval and the Groq API for fast response generation.',
+    tags: ['AI', 'Python', 'LangGraph', 'Streamlit'],
+    techStack: ['Python', 'LangGraph', 'ChromaDB', 'HuggingFace Embeddings', 'OpenAI/Groq API', 'Streamlit'],
+    features: [
+      'Smart query answering',
+      'Course/syllabus guidance',
+      'Personalized study recommendations',
+      'Context-aware responses',
+      'Fast and interactive chat interface'
+    ],
+    liveUrl: '#',
+    githubUrl: '#',
+    year: '2026',
+    featured: true,
+  },
+  {
     id: 'Trust-Tour',
     title: 'Trust Tour',
     description: 'Trust Tour is a comprehensive travel platform designed to connect travelers with local authorities. It bridges the gap between tourists seeking genuine help in emergency and local authorities, ensuring safe and reliable journeys.',

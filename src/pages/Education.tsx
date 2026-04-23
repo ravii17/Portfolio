@@ -43,7 +43,7 @@ const Education = () => {
                   </div>
                   <span className="text-muted-foreground whitespace-nowrap mt-2 md:mt-0">
                     {item.period}
-                  </span>
+                  </span>n
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
                   {item.description}
