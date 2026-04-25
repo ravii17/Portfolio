@@ -79,6 +79,7 @@ export const projects: Project[] = [
     tags: ['Web Development', 'Full Stack', 'React', 'Node.js', 'Express', 'Tailwind CSS', 'Firebase'],
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Firebase'],
     image: '/projects/cafe-bhubaneswar.png',
+    liveUrl: 'https://cafe-bhubaneswar.vercel.app/',
     githubUrl: 'https://github.com/Ravii17/Cafe_Bhubaneswar',
     year: '2026',
     featured: true,
