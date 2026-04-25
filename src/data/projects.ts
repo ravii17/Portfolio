@@ -31,7 +31,7 @@ export const projects: Project[] = [
     ],
     image: '/projects/agentic-ai.png',
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/ravii17/Ai_Course-Assistant',
     year: '2026',
     featured: true,
   },
