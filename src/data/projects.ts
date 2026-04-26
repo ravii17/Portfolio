@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     id: 'Trust-Tour',
     title: 'Trust Tour',
-    description: 'Trust Tour is a comprehensive travel platform designed to connect travelers with local authorities. It bridges the gap between tourists seeking genuine help in emergency and local authorities, ensuring safe and reliable journeys.',
+    description: 'Trust Tour is a comprehensive travel platform designed to connect and monitor travelers in India. It bridges the gap between tourists seeking genuine help in emergency and local authorities, ensuring safe and reliable journeys.',
     longDescription: 'Trust Tour is a comprehensive travel platform designed to connect travelers with local authorities. It bridges the gap between tourists seeking genuine help in emergency and local authorities, ensuring safe and reliable journeys.',
     tags: ['Web Development', 'Full Stack', 'React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Firebase'],
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Firebase'],
@@ -67,6 +67,7 @@ export const projects: Project[] = [
     longDescription: 'Smart Parking System Using IoT is a comprehensive IoT-based system that helps drivers find parking spots easily and efficiently. It uses sensors to detect available parking spots and provides real-time information to drivers through a mobile app. The system also includes features like automatic payment and navigation to the nearest available parking spot.',
     tags: ['IoT', 'Web Development', 'Full Stack', 'React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Firebase'],
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Firebase'],
+    githubUrl: 'https://github.com/ravii17/Parking-system',
     image: '/projects/smart-parking.png',
     year: '2024',
     featured: true,
