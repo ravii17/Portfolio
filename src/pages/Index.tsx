@@ -8,6 +8,7 @@ import BentoCard from '@/components/BentoCard';
 import MagneticButton from '@/components/MagneticButton';
 import { projects } from '@/data/projects';
 import { ArrowDown, Download } from 'lucide-react';
+import ProjectStats from '@/components/ProjectStats';
 
 const roles = ['HPC Engineer', 'Full Stack Developer', 'Software Engineer'];
 
@@ -79,6 +80,8 @@ const Index = () => {
             <TechMarquee />
           </div>
         </section>
+
+        <ProjectStats />
 
         <section id="work" className="py-24 px-6 lg:px-16">
           <div className="max-w-7xl mx-auto">
