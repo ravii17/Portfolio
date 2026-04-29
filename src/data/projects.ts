@@ -16,6 +16,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'solar-panel-fault-detection',
+    title: 'Solar Panel Fault Detection',
+    description: 'An automated system that detects any faults in solar panels without requiring human intervention.',
+    longDescription: 'An intelligent system designed to detect any faults in solar panels autonomously without any human intervention, ensuring optimal performance and reducing maintenance costs.',
+    tags: ['AI', 'Computer Vision', 'IoT'],
+    techStack: ['Python', 'Machine Learning', 'Computer Vision'],
+    image: '/projects/solar-panel.png',
+    year: '2026',
+    featured: true,
+  },
+  {
     id: 'agentic-ai-course-assistant',
     title: 'Agentic AI Course Assistant',
     description: 'Built an intelligent course assistance system using Agentic AI that helps students with academic queries, syllabus guidance, study planning, concept explanations, and personalized learning support.',
