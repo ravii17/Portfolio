@@ -16,6 +16,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'predictive-maintenance-industrial-motors',
+    title: 'Predictive Maintenance of Industrial Motors System (TinyML)',
+    description: 'End-to-end edge AI system for real-time industrial motor fault detection using TinyML on ESP32 and a live React dashboard.',
+    longDescription: 'Built a full-stack predictive maintenance platform that runs ML inference directly on an ESP32 microcontroller using Edge Impulse, monitors vibration, temperature, and current in real time, and streams live anomaly detection results to a React dashboard via Server-Sent Events. Designed for early fault detection in industrial motors with no cloud dependency for ML decisions.',
+    tags: ['IoT', 'Embedded Systems', 'Full-Stack'],
+    techStack: ['ESP32', 'Edge Impulse', 'TinyML', 'MPU6050', 'DS18B20', 'Arduino C++', 'Node.js', 'Express', 'React', 'Vite', 'Server-Sent Events', 'InfluxDB'],
+    liveUrl: 'https://github.com/ravii17/Predictive_Maintenof_Industrial_Motors_SystemTinyML',
+    githubUrl: 'https://github.com/ravii17/Predictive_Maintenof_Industrial_Motors_SystemTinyML',
+    image: '/projects/predictive-maintenance.png',
+    year: '2026',
+    featured: true,
+  },
+  {
     id: 'solar-panel-fault-detection',
     title: 'Solar Panel Fault Detection',
     description: 'An automated system that detects any faults in solar panels without requiring human intervention.',
