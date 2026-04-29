@@ -179,6 +179,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="flex flex-col items-center gap-6"
           >
             <MagneticButton
               as="a"
@@ -190,6 +191,9 @@ const Index = () => {
               <Download className="w-5 h-5" />
               View My Resume
             </MagneticButton>
+            <p className="text-muted-foreground text-lg font-medium tracking-wide">
+              Kalinga Institute of Industrial Technology University, Bhubaneswar Odisha
+            </p>
           </motion.div>
         </section>
 
