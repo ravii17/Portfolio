@@ -22,6 +22,12 @@ const achievementsData = [
     description: "Participated in Smart India Hackathon and developed a solution to solve real-world problems.",
   },
   {
+    title: "AI Fluency Framework",
+    organization: "Anthropic",
+    date: "2026",
+    description: "Completed AI Fluency Framework from Anthropic. The coursee is associated with a diverse group of Institutional and organizations.",
+  },
+  {
     title: "Kreative 3.0",
     organization: "Kreative 3.0",
     date: "2025",
