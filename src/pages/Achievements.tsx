@@ -10,6 +10,12 @@ const achievementsData = [
     description: "Represented Dominican Republic in the Model United Nations conference and presented a speech on global issues.",
   },
   {
+    title: "Software Engineer Intern Certificate",
+    organization: "Hacker-Rank",
+    date: "2026",
+    description: "Successfully completed the Professional Certificate in Software Engineering from HackerRank.",
+  },
+  {
     title: "SIH Participant",
     organization: "Smart India Hackathon",
     date: "2025",
