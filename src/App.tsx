@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import FloatingNav from "@/components/FloatingNav";
 import GrainOverlay from "@/components/GrainOverlay";
+import CustomCursor from "@/components/CustomCursor";
+import ScrollProgress from "@/components/ScrollProgress";
 import Index from "./pages/Index";
 import Work from "./pages/Work";
 import Archive from "./pages/Archive";
@@ -23,6 +25,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <CustomCursor />
+        <ScrollProgress />
         <GrainOverlay />
         <FloatingNav />
         <AnimatePresence mode="wait">

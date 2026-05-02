@@ -117,6 +117,7 @@ export const projects: Project[] = [
     tags: ['Full Stack', 'React', 'Node.js'],
     techStack: ['React', 'TypeScript', 'Node.js', 'Apache Kafka', 'ClickHouse', 'D3.js'],
     image: '/projects/mentor-connect.png',
+    githubUrl: 'https://github.com/ravii17/Mentor',
     year: '2026',
     featured: true,
   },

@@ -157,12 +157,13 @@ const Index = () => {
                       <p className="text-sm text-muted-foreground mb-2">{group.category}</p>
                       <div className="flex flex-wrap gap-2">
                         {group.items.map((item) => (
-                          <span
+                          <motion.span
                             key={item}
-                            className="text-sm bg-secondary px-2 py-1 rounded"
+                            whileHover={{ scale: 1.05, y: -2 }}
+                            className="text-sm bg-secondary px-2 py-1 rounded cursor-default border border-transparent hover:border-primary/50 hover:bg-primary/10 transition-colors shadow-sm hover:shadow-[0_0_10px_rgba(var(--primary),0.2)]"
                           >
                             {item}
-                          </span>
+                          </motion.span>
                         ))}
                       </div>
                     </div>
