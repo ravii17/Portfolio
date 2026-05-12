@@ -10,6 +10,19 @@ const milestones = [
   {
     id: 1,
     year: '2023',
+    phase: 'Admission in KIIT',
+    title: 'Admission in KIIT University',
+    description: 'Admission in KIIT University for Bachelor of Technology in Electronics & Computer Science and Engineering.',
+    icon: Code,
+    color: 'from-purple-500/40 to-indigo-500/40',
+    accent: '#8B5CF6',
+    side: 'left',
+    rotation: -1,
+    size: 'normal'
+  },
+  {
+    id: 2,
+    year: '2023',
     phase: 'First Breakthrough',
     title: 'Started Coding Journey',
     description: 'Began exploring the world of programming with C and Web Development fundamentals. The spark of curiosity ignited in freshman year.',
@@ -21,8 +34,8 @@ const milestones = [
     size: 'normal'
   },
   {
-    id: 2,
-    year: '2022',
+    id: 3,
+    year: '2024',
     phase: 'Architecture Era',
     title: 'Full Stack Evolution',
     description: 'Developed comprehensive web applications using MERN stack, focusing on scalable architecture and user-centric design.',
@@ -34,8 +47,21 @@ const milestones = [
     size: 'wide'
   },
   {
-    id: 3,
-    year: '2023',
+    id: 4,
+    year: '2024',
+    phase: 'IOT Era with core electronics',
+    title: 'IOT Era with core electronics',
+    description: 'Began my journey into IoT and embedded systems, gaining hands-on experience in integrating hardware and software to build smart and automated solutions.',
+    icon: Code,
+    color: 'from-purple-500/40 to-indigo-500/40',
+    accent: '#8B5CF6',
+    side: 'left',
+    rotation: -1,
+    size: 'normal'
+  },
+  {
+    id: 5,
+    year: '2024',
     phase: 'AI Exploration Phase',
     title: 'AI Automation Projects',
     description: 'Integrated LLMs and AI tools to automate complex workflows, pushing the boundaries of digital intelligence.',
@@ -47,8 +73,8 @@ const milestones = [
     size: 'normal'
   },
   {
-    id: 4,
-    year: '2023',
+    id: 6,
+    year: '2025',
     phase: 'Algorithmic Mastery',
     title: 'Trading Bot Systems',
     description: 'Engineered high-frequency algorithmic trading bots utilizing real-time data processing and technical analysis.',
@@ -60,10 +86,10 @@ const milestones = [
     size: 'compact'
   },
   {
-    id: 5,
-    year: '2024',
+    id: 7,
+    year: '2026',
     phase: 'Professional Ascension',
-    title: 'Enterprise Integration',
+    title: 'Professional Ascension',
     description: 'Gained industry experience through specialized certifications and large-scale project implementations.',
     icon: Cpu,
     color: 'from-green-500/40 to-emerald-500/40',
@@ -73,8 +99,8 @@ const milestones = [
     size: 'normal'
   },
   {
-    id: 6,
-    year: '2025 & Beyond',
+    id: 8,
+    year: '2026 & Beyond',
     phase: 'Future Vision',
     title: 'Next-Gen Ecosystems',
     description: 'Architecting the future of AI Career evolution, building immersive and intelligent digital experiences.',
