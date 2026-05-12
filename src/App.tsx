@@ -14,6 +14,7 @@ import Archive from "./pages/Archive";
 import Notes from "./pages/Notes";
 import Education from "./pages/Education";
 import Achievements from "./pages/Achievements";
+import Gallery from "./pages/Gallery";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/archive" element={<Archive />} />
             <Route path="/notes" element={<Notes />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
             <Route path="/notes/:id" element={<Notes />} />
             

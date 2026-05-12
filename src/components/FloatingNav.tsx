@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Home, FolderOpen, Archive, FileText, GraduationCap, Trophy, Mail, Github, Linkedin } from 'lucide-react';
+import { Home, FolderOpen, Archive, FileText, GraduationCap, Trophy, Mail, Github, Linkedin, Milestone } from 'lucide-react';
 
 const navItems = [
   { path: '/', icon: Home, label: 'Home' },
@@ -10,6 +10,7 @@ const navItems = [
   { path: '/achievements', icon: Trophy, label: 'Achievements' },
   { path: '/archive', icon: Archive, label: 'Archive' },
   { path: '/notes', icon: FileText, label: 'Notes' },
+  { path: '/gallery', icon: Milestone, label: 'Gallery' },
 ];
 
 const FloatingNav = () => {
@@ -54,8 +55,8 @@ const FloatingNav = () => {
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className={`p-3 rounded-full transition-colors duration-200 ${isActive
-                  ? 'bg-primary text-primary-foreground'
+                className={`p-3 rounded-full transition-all duration-300 ${isActive
+                  ? 'bg-primary text-primary-foreground shadow-[0_0_20px_rgba(139,92,246,0.6)] scale-110'
                   : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
                   }`}
               >
