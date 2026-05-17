@@ -34,20 +34,31 @@ const Archive = () => {
               >
                 <Link
                   to={`/project/${project.id}`}
-                  className="group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 py-4 md:py-5 border-b border-border/50 hover:bg-secondary/30 -mx-4 px-4 transition-colors"
+                  className="group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 py-4 md:py-5 border-b border-border/50 hover:bg-secondary/30 -mx-4 px-4 transition-colors items-center"
                 >
                   
                   <div className="md:col-span-1 text-muted-foreground text-sm">
                     {project.year}
                   </div>
 
-                  <div className="md:col-span-5">
-                    <h3 className="font-medium group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1 line-clamp-1 md:hidden">
-                      {project.description}
-                    </p>
+                  <div className="md:col-span-5 flex items-center gap-4">
+                    {project.image && (
+                      <div className="w-16 h-12 rounded overflow-hidden shrink-0 hidden md:block border border-border/50">
+                        <img 
+                          src={project.image} 
+                          alt={project.title} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="font-medium group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1 line-clamp-1 md:hidden">
+                        {project.description}
+                      </p>
+                    </div>
                   </div>
 
                   <div className="md:col-span-5 flex flex-wrap gap-2 mt-2 md:mt-0">
