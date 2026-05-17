@@ -149,11 +149,11 @@ export const projects: Project[] = [
 
 export const archiveProjects: Project[] = [
   {
-    id: 'cli-task-manager',
-    title: 'CLI Task Manager',
-    description: 'A minimalist command-line task management tool with vim-like keybindings.',
-    tags: ['CLI', 'Rust'],
-    image: '/projects/cli-task-manager.png',
+    id: 'calculator',
+    title: 'Calculator',
+    description: 'A basic calculator for the android mobile.',
+    tags: ['Android', 'Kotlin'],
+    image: '/projects/calculator.png',
     year: '2023',
     featured: false,
   },
