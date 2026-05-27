@@ -5,8 +5,8 @@ interface MagneticButtonProps {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
-  as?: 'button' | 'a';
-  href?: string;
+  as?: React.ElementType;
+  [key: string]: any;
 }
 
 const MagneticButton = ({ 
@@ -14,7 +14,7 @@ const MagneticButton = ({
   className = '', 
   onClick,
   as = 'button',
-  href 
+  ...props
 }: MagneticButtonProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -34,7 +34,9 @@ const MagneticButton = ({
     setPosition({ x: 0, y: 0 });
   };
 
-  const Component = as === 'a' ? motion.a : motion.button;
+  const Component = typeof as === 'string'
+    ? (motion as any)[as]
+    : motion(as);
 
   return (
     <div
@@ -44,13 +46,13 @@ const MagneticButton = ({
       className="inline-block"
     >
       <Component
-        href={href}
         onClick={onClick}
         animate={{ x: position.x, y: position.y }}
         transition={{ type: 'spring', stiffness: 350, damping: 15 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className={className}
+        {...props}
       >
         {children}
       </Component>

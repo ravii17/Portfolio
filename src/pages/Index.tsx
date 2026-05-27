@@ -6,14 +6,15 @@ import HeroCard from '@/components/HeroCard';
 import SectionHeader from '@/components/SectionHeader';
 import BentoCard from '@/components/BentoCard';
 import MagneticButton from '@/components/MagneticButton';
+import { Link } from 'react-router-dom';
 import { projects } from '@/data/projects';
-import { ArrowDown, Download } from 'lucide-react';
+import { ArrowDown, Download, ArrowRight } from 'lucide-react';
 import ProjectStats from '@/components/ProjectStats';
 
 const roles = ['HPC Engineer', 'Full Stack Developer', 'Software Engineer'];
 
 const Index = () => {
-  const featuredProjects = projects.filter(p => p.featured);
+  const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
 
   return (
     <PageTransition>
@@ -103,6 +104,17 @@ const Index = () => {
                   index={index}
                 />
               ))}
+            </div>
+
+            <div className="mt-12 flex justify-center">
+              <MagneticButton
+                as={Link}
+                to="/work"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 group"
+              >
+                <span>View All Projects</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </MagneticButton>
             </div>
           </div>
         </section>
