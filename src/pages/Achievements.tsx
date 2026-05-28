@@ -35,9 +35,9 @@ const achievementsData = [
   },
   {
     title: "Evaluation Round in Prop firms",
-    organization: "Prop Firms",
+    organization: "Funding PIPS",
     date: "2026",
-    description: "Successfully clearedd the Evaluation Round in Funding Pips Prop Firm.",
+    description: "Successfully cleared the Evaluation Round in Funding Pips Prop Firm.",
   }
 ];
 
