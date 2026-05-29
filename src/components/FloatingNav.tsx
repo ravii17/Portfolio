@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Home, FolderOpen, Archive, FileText, GraduationCap, Trophy, Mail, Github, Linkedin, Milestone } from 'lucide-react';
@@ -18,16 +19,27 @@ const FloatingNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
+    const sentinel = document.getElementById('scroll-sentinel');
+    if (!sentinel) return;
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsScrolled(!entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <motion.nav
+    <>
+      {createPortal(
+        <div id="scroll-sentinel" className="absolute top-0 left-0 w-px h-[100px] pointer-events-none" />,
+        document.body
+      )}
+      <motion.nav
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
@@ -124,6 +136,7 @@ const FloatingNav = () => {
         </a>
       </motion.div>
     </motion.nav>
+    </>
   );
 };
 

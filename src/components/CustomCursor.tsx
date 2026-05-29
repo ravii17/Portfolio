@@ -12,9 +12,16 @@ const CustomCursor = () => {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    let ticking = false;
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 16);
-      cursorY.set(e.clientY - 16);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          cursorX.set(e.clientX - 16);
+          cursorY.set(e.clientY - 16);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -29,8 +36,8 @@ const CustomCursor = () => {
       setIsHovered(!!isInteractive);
     };
 
-    window.addEventListener('mousemove', moveCursor);
-    window.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener('mousemove', moveCursor, { passive: true });
+    window.addEventListener('mouseover', handleMouseOver, { passive: true });
 
     // Hide default cursor on desktop to replace it with ours, or keep both?
     // Often it's better to hide it for a true custom feel.
@@ -51,6 +58,7 @@ const CustomCursor = () => {
         y: cursorYSpring,
         scale: isHovered ? 1.5 : 1,
         backgroundColor: isHovered ? 'rgba(255,255,255,0.1)' : 'transparent',
+        willChange: 'transform',
       }}
     >
       <motion.div 

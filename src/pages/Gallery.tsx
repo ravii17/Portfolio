@@ -121,12 +121,19 @@ const MagneticCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          cursorX.set(e.clientX);
+          cursorY.set(e.clientY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mousemove', moveCursor, { passive: true });
     return () => window.removeEventListener('mousemove', moveCursor);
   }, []);
 
@@ -141,6 +148,7 @@ const MagneticCursor = () => {
         background: 'radial-gradient(circle, rgba(139,92,246,0.3) 0%, transparent 70%)',
         boxShadow: '0 0 40px rgba(139,92,246,0.2)',
         scale: isHovering ? 2 : 1,
+        willChange: 'transform',
       }}
     >
       <div className="absolute inset-0 border border-primary/40 rounded-full animate-pulse" />
@@ -174,6 +182,14 @@ const PathParticle = ({ pathRef, delay }: { pathRef: React.RefObject<SVGPathElem
     const particle = particleRef.current;
     const length = path.getTotalLength();
 
+    // Precompute points to prevent layout thrashing in the animation loop
+    const pointsCount = 200;
+    const points: { x: number; y: number }[] = [];
+    for (let i = 0; i <= pointsCount; i++) {
+      const p = path.getPointAtLength((i / pointsCount) * length);
+      points.push({ x: p.x, y: p.y });
+    }
+
     gsap.to(particle, {
       duration: 10 + Math.random() * 5,
       repeat: -1,
@@ -181,8 +197,12 @@ const PathParticle = ({ pathRef, delay }: { pathRef: React.RefObject<SVGPathElem
       ease: "none",
       onUpdate: function () {
         const progress = this.progress();
-        const point = path.getPointAtLength(progress * length);
-        gsap.set(particle, { cx: point.x, cy: point.y });
+        const index = Math.min(pointsCount, Math.floor(progress * pointsCount));
+        const point = points[index];
+        if (point) {
+          // Use hardware-accelerated transform properties (x/y) instead of cx/cy
+          gsap.set(particle, { x: point.x, y: point.y });
+        }
       }
     });
   }, [pathRef]);
@@ -190,9 +210,12 @@ const PathParticle = ({ pathRef, delay }: { pathRef: React.RefObject<SVGPathElem
   return (
     <circle
       ref={particleRef}
+      cx={0}
+      cy={0}
       r="2"
       fill="#8B5CF6"
       className="filter blur-[1px]"
+      style={{ willChange: "transform" }}
     />
   );
 };
@@ -236,11 +259,13 @@ const Gallery = () => {
           animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/4 -left-1/4 w-full h-full bg-purple-600/5 blur-[150px] rounded-full"
+          style={{ willChange: "transform" }}
         />
         <motion.div
           animate={{ x: [0, -40, 0], y: [0, -50, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-1/4 -right-1/4 w-full h-full bg-blue-600/5 blur-[150px] rounded-full"
+          style={{ willChange: "transform" }}
         />
       </div>
 
@@ -351,16 +376,45 @@ const MilestoneCard = ({ milestone, index }: { milestone: any; index: number }) 
   const mouseX = useSpring(x, { stiffness: 150, damping: 15 });
   const mouseY = useSpring(y, { stiffness: 150, damping: 15 });
 
+  const rectRef = useRef<DOMRect | null>(null);
+
+  useEffect(() => {
+    if (!isHovered) return;
+
+    const updateRect = () => {
+      if (cardRef.current) {
+        rectRef.current = cardRef.current.getBoundingClientRect();
+      }
+    };
+
+    updateRect();
+
+    window.addEventListener('scroll', updateRect, { passive: true });
+    window.addEventListener('resize', updateRect, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', updateRect);
+      window.removeEventListener('resize', updateRect);
+    };
+  }, [isHovered]);
+
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
+
+    if (!rectRef.current) {
+      rectRef.current = cardRef.current.getBoundingClientRect();
+    }
+    const rect = rectRef.current;
+
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
     const distanceX = e.clientX - centerX;
     const distanceY = e.clientY - centerY;
 
-    x.set(distanceX * 0.05);
-    y.set(distanceY * 0.05);
+    window.requestAnimationFrame(() => {
+      x.set(distanceX * 0.05);
+      y.set(distanceY * 0.05);
+    });
   };
 
   const handleMouseEnter = () => {
@@ -379,6 +433,7 @@ const MilestoneCard = ({ milestone, index }: { milestone: any; index: number }) 
     x.set(0);
     y.set(0);
     setIsHovered(false);
+    rectRef.current = null;
   };
 
   const widthClass = {
@@ -415,6 +470,7 @@ const MilestoneCard = ({ milestone, index }: { milestone: any; index: number }) 
         style={{
           translateX: mouseX,
           translateY: mouseY,
+          willChange: 'transform',
         }}
         className={`group relative ${widthClass} w-full cursor-none md:cursor-default`}
       >
