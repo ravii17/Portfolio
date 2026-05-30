@@ -4,7 +4,17 @@ import { useRef } from 'react';
 import PageTransition from '@/components/PageTransition';
 import MagneticButton from '@/components/MagneticButton';
 import { chapters } from '@/data/chapters';
-import { ArrowLeft, Calendar, User, Bookmark, CheckCircle, Clock, BookOpen, ChevronRight, Sparkles } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Bookmark, CheckCircle, Clock, BookOpen, ChevronRight, Sparkles, Code, Globe, Brain, Bot, Cpu } from 'lucide-react';
+
+const iconMap: Record<string, React.ComponentType<any>> = {
+  code: Code,
+  globe: Globe,
+  brain: Brain,
+  bot: Bot,
+  cpu: Cpu,
+  sparkles: Sparkles
+};
+
 
 const ChapterDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -134,31 +144,68 @@ const ChapterDetail = () => {
                 </div>
               </div>
 
-              {/* Cover Card Banner */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="group relative rounded-[2rem] overflow-hidden glass border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] aspect-[21/9]"
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
-                <img
-                  src={chapter.coverImage}
-                  alt={chapter.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                
-                {/* Floating graphic overlay */}
-                <div className="absolute bottom-6 right-6 z-20 bg-black/60 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <Sparkles className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Odyssey Phase</p>
-                    <p className="text-xs font-bold text-white/80 uppercase">{chapter.phase}</p>
-                  </div>
-                </div>
-              </motion.div>
+              {/* Cover Card Banner (CSS-only Abstract Design to avoid AI-generated images) */}
+              {(() => {
+                const ChapterIcon = iconMap[chapter.iconName] || Code;
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
+                    className="group relative rounded-[2rem] overflow-hidden glass border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] aspect-[21/9] flex items-center justify-between p-8 md:p-12"
+                    style={{
+                      background: `radial-gradient(circle at 20% 30%, ${chapter.accent}15, transparent 70%), 
+                                   radial-gradient(circle at 80% 70%, rgba(30, 27, 75, 0.2), transparent 75%),
+                                   #050505`
+                    }}
+                  >
+                    {/* Tech Grid Pattern */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:30px_30px]" />
+                    
+                    {/* Glowing Ambient Particle Orbs */}
+                    <motion.div 
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        x: [0, 8, 0],
+                        y: [0, -8, 0]
+                      }}
+                      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute -top-12 -left-12 w-48 h-48 rounded-full blur-[80px]"
+                      style={{ backgroundColor: `${chapter.accent}10` }}
+                    />
+
+                    {/* Animated Emblem */}
+                    <div className="absolute right-12 md:right-24 top-1/2 -translate-y-1/2 opacity-[0.05] group-hover:opacity-[0.08] transition-opacity duration-700 pointer-events-none">
+                      <ChapterIcon className="w-32 h-32 md:w-48 md:h-48 animate-float text-white" strokeWidth={1} />
+                    </div>
+
+                    {/* Typography details in the banner */}
+                    <div className="relative z-20 max-w-lg space-y-3">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/5 bg-white/5 backdrop-blur-md text-[10px] font-mono uppercase tracking-widest text-white/50">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                        System Active
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-black tracking-tight uppercase font-mono text-white/40">
+                        {chapter.phase}
+                      </h3>
+                      <p className="text-xs md:text-sm text-white/30 font-mono tracking-widest">
+                        ID // 0{chapter.chapterNumber} // YEAR {chapter.year}
+                      </p>
+                    </div>
+                    
+                    {/* Floating graphic overlay */}
+                    <div className="absolute bottom-6 right-6 z-20 bg-black/60 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                        <Sparkles className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Odyssey Phase</p>
+                        <p className="text-xs font-bold text-white/80 uppercase">{chapter.phase}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })()}
 
               {/* Short Description Section */}
               <div className="space-y-6">
