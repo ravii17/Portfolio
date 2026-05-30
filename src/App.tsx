@@ -16,6 +16,7 @@ import Education from "./pages/Education";
 import Achievements from "./pages/Achievements";
 import Gallery from "./pages/Gallery";
 import ProjectDetail from "./pages/ProjectDetail";
+import ChapterDetail from "./pages/ChapterDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="/archive" element={<Archive />} />
             <Route path="/notes" element={<Notes />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/gallery/:id" element={<ChapterDetail />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
             <Route path="/notes/:id" element={<Notes />} />
             

@@ -1,117 +1,26 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence, useMotionValue } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Milestone, Sparkles, Rocket, Zap, Brain, Code, Target, ChevronRight, Globe, Cpu, Bot } from 'lucide-react';
+import { Sparkles, Brain, Code, ChevronRight, Globe, Cpu, Bot } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { chapters } from '../data/chapters';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const milestones = [
-  {
-    id: 1,
-    year: '2023',
-    phase: 'Admission in KIIT',
-    title: 'Admission in KIIT University',
-    description: 'Admission in KIIT University for Bachelor of Technology in Electronics & Computer Science and Engineering.',
-    icon: Code,
-    color: 'from-purple-500/40 to-indigo-500/40',
-    accent: '#8B5CF6',
-    side: 'left',
-    rotation: -1,
-    size: 'normal'
-  },
-  {
-    id: 2,
-    year: '2023',
-    phase: 'First Breakthrough',
-    title: 'Started Coding Journey',
-    description: 'Began exploring the world of programming with C and Web Development fundamentals. The spark of curiosity ignited in freshman year.',
-    icon: Code,
-    color: 'from-purple-500/40 to-indigo-500/40',
-    accent: '#8B5CF6',
-    side: 'left',
-    rotation: -1,
-    size: 'normal'
-  },
-  {
-    id: 3,
-    year: '2024',
-    phase: 'Architecture Era',
-    title: 'Full Stack Evolution',
-    description: 'Developed comprehensive web applications using MERN stack, focusing on scalable architecture and user-centric design.',
-    icon: Globe,
-    color: 'from-blue-500/40 to-cyan-500/40',
-    accent: '#3B82F6',
-    side: 'right',
-    rotation: 1.5,
-    size: 'wide'
-  },
-  {
-    id: 4,
-    year: '2024',
-    phase: 'IOT Era with core electronics',
-    title: 'IOT Era with core electronics',
-    description: 'Began my journey into IoT and embedded systems, gaining hands-on experience in integrating hardware and software to build smart and automated solutions.',
-    icon: Code,
-    color: 'from-purple-500/40 to-indigo-500/40',
-    accent: '#8B5CF6',
-    side: 'left',
-    rotation: -1,
-    size: 'normal'
-  },
-  {
-    id: 5,
-    year: '2024',
-    phase: 'AI Exploration Phase',
-    title: 'AI Automation Projects',
-    description: 'Integrated LLMs and AI tools to automate complex workflows, pushing the boundaries of digital intelligence.',
-    icon: Brain,
-    color: 'from-fuchsia-500/40 to-purple-500/40',
-    accent: '#D946EF',
-    side: 'left',
-    rotation: -0.5,
-    size: 'normal'
-  },
-  {
-    id: 6,
-    year: '2025',
-    phase: 'Algorithmic Mastery',
-    title: 'Trading Bot Systems',
-    description: 'Engineered high-frequency algorithmic trading bots utilizing real-time data processing and technical analysis.',
-    icon: Bot,
-    color: 'from-amber-500/40 to-orange-500/40',
-    accent: '#F59E0B',
-    side: 'right',
-    rotation: 2,
-    size: 'compact'
-  },
-  {
-    id: 7,
-    year: '2026',
-    phase: 'Professional Ascension',
-    title: 'Professional Ascension',
-    description: 'Gained industry experience through specialized certifications and large-scale project implementations.',
-    icon: Cpu,
-    color: 'from-green-500/40 to-emerald-500/40',
-    accent: '#10B981',
-    side: 'left',
-    rotation: 1,
-    size: 'normal'
-  },
-  {
-    id: 8,
-    year: '2026 & Beyond',
-    phase: 'Future Vision',
-    title: 'Next-Gen Ecosystems',
-    description: 'Architecting the future of AI Career evolution, building immersive and intelligent digital experiences.',
-    icon: Sparkles,
-    color: 'from-rose-500/40 to-pink-500/40',
-    accent: '#F43F5E',
-    side: 'right',
-    rotation: -1.5,
-    size: 'wide'
-  }
-];
+const iconMap: Record<string, React.ComponentType<any>> = {
+  code: Code,
+  globe: Globe,
+  brain: Brain,
+  bot: Bot,
+  cpu: Cpu,
+  sparkles: Sparkles
+};
+
+const milestones = chapters.map(c => ({
+  ...c,
+  icon: iconMap[c.iconName] || Code
+}));
 
 const MagneticCursor = () => {
   const cursorX = useMotionValue(-100);
@@ -552,14 +461,16 @@ const MilestoneCard = ({ milestone, index }: { milestone: any; index: number }) 
                 ))}
               </div>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-4 py-2 md:px-6 md:py-2.5 rounded-full bg-white/5 border border-white/5 text-[10px] md:text-xs font-bold text-white/60 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all group/btn"
-              >
-                VIEW CHAPTER
-                <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-              </motion.button>
+              <Link to={`/gallery/${milestone.id}`} className="inline-block">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center gap-2 px-4 py-2 md:px-6 md:py-2.5 rounded-full bg-white/5 border border-white/5 text-[10px] md:text-xs font-bold text-white/60 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all group/btn"
+                >
+                  VIEW CHAPTER
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                </motion.button>
+              </Link>
             </footer>
           </div>
         </div>

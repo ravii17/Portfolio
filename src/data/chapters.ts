@@ -1,0 +1,192 @@
+export interface Chapter {
+  id: string;
+  year: string;
+  phase: string;
+  title: string;
+  description: string;
+  longDescription: string;
+  chapterNumber: number;
+  publishedDate: string;
+  author: string;
+  tags: string[];
+  status: 'Completed' | 'Ongoing';
+  coverImage: string;
+  iconName: 'code' | 'globe' | 'brain' | 'bot' | 'cpu' | 'sparkles';
+  accent: string;
+  color: string;
+  side: 'left' | 'right';
+  rotation: number;
+  size: 'normal' | 'wide' | 'compact';
+  readingContent: string;
+}
+
+export const chapters: Chapter[] = [
+  {
+    id: '1',
+    year: '2023',
+    phase: 'Admission in KIIT',
+    title: 'Admission in KIIT University',
+    description: 'Admission in KIIT University for Bachelor of Technology in Electronics & Computer Science and Engineering.',
+    longDescription: 'The beginning of an academic odyssey. Enrolled in KIIT University to pursue a Bachelor of Technology in Electronics & Computer Science and Engineering. This milestone laid the foundational groundwork in hardware and software design, digital systems, and computational theory.',
+    chapterNumber: 1,
+    publishedDate: 'July 2023',
+    author: 'Ravi Kumar',
+    tags: ['Education', 'KIIT University', 'Computer Science & Engineering'],
+    status: 'Completed',
+    coverImage: '/projects/healthcare-plus.png',
+    iconName: 'code',
+    accent: '#8B5CF6',
+    color: 'from-purple-500/40 to-indigo-500/40',
+    side: 'left',
+    rotation: -1,
+    size: 'normal',
+    readingContent: 'Entering KIIT University was a major milestone. The campus was huge, full of hope and opportunities. Stepping into the labs, the scent of solder and the hum of server racks immediately caught my attention. In this chapter, I began my formal studies in Electronics & Computer Science, blending the core hardware design of microprocessors with structural computer science paradigms. I met talented peers, joined technical societies, and established the foundation of my engineering career.'
+  },
+  {
+    id: '2',
+    year: '2023',
+    phase: 'First Breakthrough',
+    title: 'Started Coding Journey',
+    description: 'Began exploring the world of programming with C and Web Development fundamentals. The spark of curiosity ignited in freshman year.',
+    longDescription: 'Sparked by freshman curiosity, I plunged into software development. Learned the fundamentals of programming using C, and dipped my toes into web technologies, laying down the building blocks of my software engineering capabilities.',
+    chapterNumber: 2,
+    publishedDate: 'September 2023',
+    author: 'Ravi Kumar',
+    tags: ['Programming', 'C Language', 'Web Fundamentals'],
+    status: 'Completed',
+    coverImage: '/projects/calculator.png',
+    iconName: 'code',
+    accent: '#8B5CF6',
+    color: 'from-purple-500/40 to-indigo-500/40',
+    side: 'left',
+    rotation: -1,
+    size: 'normal',
+    readingContent: 'Curiosity was the spark. I remember writing my first \'Hello World\' in C. The simplicity of taking control of a computer through lines of code was fascinating. From loop constructs to pointers and basic data structures, I spent late nights debugging segmentation faults. Alongside C, I experimented with HTML, CSS, and basic JavaScript, building simple utility pages and calculators. This chapter was defined by pure discovery and the excitement of creating something from nothing.'
+  },
+  {
+    id: '3',
+    year: '2024',
+    phase: 'Architecture Era',
+    title: 'Full Stack Evolution',
+    description: 'Developed comprehensive web applications using MERN stack, focusing on scalable architecture and user-centric design.',
+    longDescription: 'Transitioned to advanced web architectures. Mastered React, Express, Node.js, and MongoDB to construct scalable, fully responsive full-stack applications with beautiful interfaces and robust database layers.',
+    chapterNumber: 3,
+    publishedDate: 'March 2024',
+    author: 'Ravi Kumar',
+    tags: ['MERN Stack', 'Backend Systems', 'Full Stack Development'],
+    status: 'Completed',
+    coverImage: '/projects/cafe-bhubaneswar.png',
+    iconName: 'globe',
+    accent: '#3B82F6',
+    color: 'from-blue-500/40 to-cyan-500/40',
+    side: 'right',
+    rotation: 1.5,
+    size: 'wide',
+    readingContent: 'Building static websites wasn\'t enough; I wanted to build systems that hold state and respond to users globally. That led me to the MERN stack (MongoDB, Express, React, Node.js). This chapter was a rapid evolution: learning RESTful API design, database modeling, state management, and user authentication. I designed and deployed dynamic apps, learning how to structure backends for high availability and frontends for pixel-perfect user interaction.'
+  },
+  {
+    id: '4',
+    year: '2024',
+    phase: 'IOT Era with core electronics',
+    title: 'IOT Era with core electronics',
+    description: 'Began my journey into IoT and embedded systems, gaining hands-on experience in integrating hardware and software to build smart and automated solutions.',
+    longDescription: 'Merged software expertise with hardware. Developed automated systems utilizing microcontrollers, sensors, and communication protocols to solve real-world problems through embedded IoT platforms.',
+    chapterNumber: 4,
+    publishedDate: 'July 2024',
+    author: 'Ravi Kumar',
+    tags: ['IoT', 'Embedded Systems', 'Arduino & ESP32'],
+    status: 'Completed',
+    coverImage: '/projects/smart-parking.png',
+    iconName: 'code',
+    accent: '#8B5CF6',
+    color: 'from-purple-500/40 to-indigo-500/40',
+    side: 'left',
+    rotation: -1,
+    size: 'normal',
+    readingContent: 'Bridging the gap between the virtual and physical world. In this chapter, I began working with microcontrollers like Arduino and ESP32. I integrated sensors (vibration, temperature, ultrasonic) to collect real-time ambient data, processing it on-device and transmitting it over MQTT and HTTP protocols. Debugging physical circuits and dealing with analog signals taught me hardware resilience and low-level firmware optimizations.'
+  },
+  {
+    id: '5',
+    year: '2024',
+    phase: 'AI Exploration Phase',
+    title: 'AI Automation Projects',
+    description: 'Integrated LLMs and AI tools to automate complex workflows, pushing the boundaries of digital intelligence.',
+    longDescription: 'Explored the potential of artificial intelligence. Built applications leveraging Large Language Models, Retrieval-Augmented Generation (RAG), and agentic workflows to automate tasks and build intelligent interfaces.',
+    chapterNumber: 5,
+    publishedDate: 'December 2024',
+    author: 'Ravi Kumar',
+    tags: ['AI Agents', 'LangGraph', 'LLM Integration', 'ChromaDB'],
+    status: 'Completed',
+    coverImage: '/projects/agentic-ai.png',
+    iconName: 'brain',
+    accent: '#D946EF',
+    color: 'from-fuchsia-500/40 to-purple-500/40',
+    side: 'left',
+    rotation: -0.5,
+    size: 'normal',
+    readingContent: 'Artificial Intelligence opened a new dimension of computing. Instead of writing rigid logic, I could now direct agents to reason and plan. This chapter focuses on integrating LLMs (using OpenAI, Groq, and HuggingFace models) with agent frameworks like LangGraph and ChromaDB. I created autonomous agents capable of performing domain-specific lookups, semantic searches, and executing compound tasks dynamically.'
+  },
+  {
+    id: '6',
+    year: '2025',
+    phase: 'Algorithmic Mastery',
+    title: 'Trading Bot Systems',
+    description: 'Engineered high-frequency algorithmic trading bots utilizing real-time data processing and technical analysis.',
+    longDescription: 'Combined data analysis and automated execution. Architected algorithmic trading models running on Hyper-Liquid, featuring real-time stream parsing, technical analysis algorithms, and risk management parameters.',
+    chapterNumber: 6,
+    publishedDate: 'June 2025',
+    author: 'Ravi Kumar',
+    tags: ['FinTech', 'Algorithmic Trading', 'Hyper-Liquid API'],
+    status: 'Completed',
+    coverImage: '/projects/ai-trading.png',
+    iconName: 'bot',
+    accent: '#F59E0B',
+    color: 'from-amber-500/40 to-orange-500/40',
+    side: 'right',
+    rotation: 2,
+    size: 'compact',
+    readingContent: 'High-frequency environments demand zero-latency processing and iron-clad logic. In this chapter, I developed trading algorithms utilizing APIs and websockets to stream orderbooks and execution data in real time. Running strategies on the Hyper-Liquid exchange required rigorous backtesting, optimizing for network delay, and implementing sophisticated risk controls to prevent catastrophic liquidation.'
+  },
+  {
+    id: '7',
+    year: '2026',
+    phase: 'Professional Ascension',
+    title: 'Professional Ascension',
+    description: 'Gained industry experience through specialized certifications and large-scale project implementations.',
+    longDescription: 'Acquired critical professional experiences. Participated in real-world software deployments, collaborated with developers in production environments, and achieved industry certifications validating system design capabilities.',
+    chapterNumber: 7,
+    publishedDate: 'January 2026',
+    author: 'Ravi Kumar',
+    tags: ['Android Development', 'Kotlin & Java', 'Firebase Services'],
+    status: 'Ongoing',
+    coverImage: '/projects/promotr.png',
+    iconName: 'cpu',
+    accent: '#10B981',
+    color: 'from-green-500/40 to-emerald-500/40',
+    side: 'left',
+    rotation: 1,
+    size: 'normal',
+    readingContent: 'Entering professional environments meant learning how software is built at scale. Version control, continuous integration, code reviews, and cross-functional collaboration became daily rituals. I worked on developing and optimizing mobile applications (such as Promotr, using Kotlin and Android SDK) and full-stack systems. This chapter is marked by the shift from individual builder to professional software engineer.'
+  },
+  {
+    id: '8',
+    year: '2026 & Beyond',
+    phase: 'Future Vision',
+    title: 'Next-Gen Ecosystems',
+    description: 'Architecting the future of AI Career evolution, building immersive and intelligent digital experiences.',
+    longDescription: 'Looking forward to next-generation technologies. Researching and prototyping the interface between developer ecosystems, autonomous AI coding agents, and high-performance computing clusters.',
+    chapterNumber: 8,
+    publishedDate: 'May 2026 & Beyond',
+    author: 'Ravi Kumar',
+    tags: ['R&D', 'AI Agents', 'High-Performance Computing'],
+    status: 'Ongoing',
+    coverImage: '/projects/predictive-maintenance.png',
+    iconName: 'sparkles',
+    accent: '#F43F5E',
+    color: 'from-rose-500/40 to-pink-500/40',
+    side: 'right',
+    rotation: -1.5,
+    size: 'wide',
+    readingContent: 'What is next? The future is agentic and autonomous. I am currently focusing on building platforms where developers work side-by-side with AI subagents. By combining my passion for high-performance computing, distributed caching, and state-of-the-art LLM architectures, I aim to create tools that make human-AI collaborative building seamless and highly efficient.'
+  }
+];
