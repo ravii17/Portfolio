@@ -143,7 +143,7 @@ const Gallery = () => {
     restDelta: 0.001
   });
 
-  const pathD = "M 500 0 C 600 200, 700 400, 500 600 S 300 1000, 500 1200 S 700 1600, 500 1800 S 300 2200, 500 2400 S 700 2800, 500 3000 S 300 3400, 500 3600 S 700 4000, 500 4200 S 300 4600, 500 5000";
+  const pathD = "M 500 0 C 600 200, 700 400, 500 600 S 300 1000, 500 1200 S 700 1600, 500 1800 S 300 2200, 500 2400 S 700 2800, 500 3000 S 300 3400, 500 3600 S 700 4000, 500 4200 S 300 4600, 500 5000 S 700 5400, 500 5800 S 300 6200, 500 6600 S 700 7000, 500 7400";
 
   return (
     <motion.div
@@ -152,7 +152,7 @@ const Gallery = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       ref={containerRef}
-      className="relative min-h-[600vh] bg-[#030303] text-white selection:bg-primary/30 overflow-x-hidden"
+      className="relative min-h-[800vh] bg-[#030303] text-white selection:bg-primary/30 overflow-x-hidden"
     >
       <MagneticCursor />
       <NeuralGrid />
@@ -182,8 +182,8 @@ const Gallery = () => {
       <div className="absolute inset-0 pointer-events-none flex justify-center">
         <svg
           width="1000"
-          height="6000"
-          viewBox="0 0 1000 6000"
+          height="7500"
+          viewBox="0 0 1000 7500"
           className="w-full max-w-6xl overflow-visible opacity-40"
         >
           <defs>

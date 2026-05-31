@@ -5,16 +5,22 @@ import SectionHeader from '@/components/SectionHeader';
 const educationData = [
   {
     institution: "KIIT Deemed to be University",
-    degree: "Bachelor of Electronics & Computer Science Engineering",
+    degree: "Bachelor of Computer Science and Engineering (Data Science and Engineering)",
     period: "2023 - 2027",
     description: "Relevant coursework: Data Structures, Algorithms, Computer System & Architecture, High-Performance Computing.",
   },
   {
-    institution: "Kendriya Vidyalaya 1 S.T.C Jabalpur",
-    degree: "10th & Intermediate",
-    period: "2020 - 2022",
-    description: "Focused on Mathematics, Physics, Chemistry, English, Computer Science.",
-  }
+    institution: "Kendriya Vidyalaya 1 STC",
+    degree: "Higher Secondary Education (12th Grade - PCM)",
+    period: "2021 - 2023",
+    description: "Focused on Physics, Chemistry, and Mathematics (PCM). Consolidating strong academic foundations in preparation for higher engineering studies.",
+  },
+  {
+    institution: "Kendriya Vidyalaya 1 STC",
+    degree: "Secondary Education (10th Grade)",
+    period: "2019 - 2021",
+    description: "Completed secondary education with a focus on science, mathematics, and computer applications.",
+  },
 ];
 
 const Education = () => {
