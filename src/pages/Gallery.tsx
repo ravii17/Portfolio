@@ -236,14 +236,14 @@ const Gallery = () => {
             className="flex flex-col items-center"
           >
             <div className="px-6 py-2 rounded-full border border-white/5 bg-white/5 backdrop-blur-md text-primary text-xs font-bold uppercase tracking-[0.3em] mb-12 shadow-[0_0_20px_rgba(139,92,246,0.15)]">
-              Digital Odyssey v2.0
+              Digital Gallery of my Career
             </div>
             <h1 className="text-7xl md:text-9xl font-black mb-10 tracking-tighter leading-none">
               THE <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-primary to-purple-800 animate-gradient-shift py-4">EVOLUTION</span>
             </h1>
             <p className="text-white/40 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
-              Trace the handcrafted journey of a developer navigating through the neural pathways of technology and creative design.
+              Documenting the evolution of a developer crafting meaningful experiences through technology.
             </p>
           </motion.div>
 
